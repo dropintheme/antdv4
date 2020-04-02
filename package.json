@@ -1,10 +1,12 @@
 {
-  "name": "@dropintheme/antd",
+  "name": "@dropintheme/antdv4",
   "version": "1.0.0",
   "description": "ReactJS DropIn Theme of Ant Design V4",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && mkdir dist && babel src -s -D -d dist"
   },
   "repository": {
     "type": "git",
@@ -23,17 +25,25 @@
   },
   "homepage": "https://github.com/dropintheme/antdv4#readme",
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/preset-react": "^7.7.4",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.3.0",
     "style-loader": "^1.0.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
-    "react": "^16.13.0",
-    "webpack": "^4.42.0"
+    "@babel/cli": "^7.8.4",
+    "antd": "^4.0.2",
+    "@dropintheme/utils": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
   }
 }

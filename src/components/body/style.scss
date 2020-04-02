@@ -1,0 +1,138 @@
+// @import '../../../config/core.scss';
+
+.container {
+    padding: 24px;
+}
+
+.ant-post {
+    .ant-post-title {
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+        font-size: 16px;
+        margin: 5px 0px;
+    }
+}
+
+.ant-custom-typography {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+$size-list: 8 10 12 14 16 18 20 22 24 28 32 36 40 44 48 52 56 60;
+
+@each $current-size in $size-list {
+    .ant-custom-typography-size-#{$current-size} {
+        font-size: #{$current-size}px;
+    }
+}
+
+.ant-rate-star:not(:last-child) {
+    margin-right: 2px;
+}
+
+.ant-custom-flex-box {
+    display: flex;
+
+    &.ant-custom-flex-box-full {
+        flex: 0 0 100%;
+    }
+
+    .ant-custom-flex-box-auto-grow {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    .ant-custom-flex-box-fixed-size {
+        flex: 0 0 auto;
+        display: flex;
+    }
+
+    .ant-custom-flex-box-equal-size {
+        flex: 1 1;
+    }
+
+    $justify-list: flex-start flex-end start end center space-around
+        space-between;
+
+    @each $current-justify in $justify-list {
+        .ant-custom-flex-box-justify-#{$current-justify} {
+            justify-content: #{$current-justify};
+        }
+    }
+
+    $align-list: flex-start flex-end center baseline stretch;
+
+    @each $current-align in $align-list {
+        .ant-custom-flex-box-align-#{$current-align} {
+            align-items: #{$current-align};
+        }
+    }
+
+    @for $i from 1 through 40 {
+        .ant-custom-flex-box-size-#{$i*5} {
+            flex-basis: #{$i * 5}px;
+        }
+    }
+}
+
+.ant-comment-inner {
+    padding: 8px 0px 4px;
+}
+
+.ant-comment-actions {
+    margin: 4px 0px;
+}
+
+.ant-post-comment-content-author-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85) !important;
+}
+
+span.ant-post-comment-content-author {
+    display: block;
+
+    .ant-comment-content-author-time {
+        padding-left: 10px;
+    }
+}
+
+span.ant-post-comment-content-author-about {
+    display: block;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.ant-comment-editor .ant-form-item {
+    margin-bottom: 5px;
+}
+
+.ant-custom-block-label {
+    margin: 10px 0px;
+}
+
+.ant-custom-input-helper {
+    font-size: 11px;
+    padding: 5px 0px;
+    // color: transparentize($color: $text_color_primary, $amount: 0.35);
+}
+
+.ant-custom-input-label {
+    // color: $text_color_primary;
+    padding: 3px 0px 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ant-btn-file-upload {
+    border: 1px solid #f57c00;
+    color: #f57c00;
+
+    &:hover {
+        border: 1px solid #f57c00;
+        color: lighten($color: #f57c00, $amount: 20);
+    }
+}
+
+.ant-btn-post-type-change {
+    border: 1px solid #007eff;
+    color: #007eff;
+}
